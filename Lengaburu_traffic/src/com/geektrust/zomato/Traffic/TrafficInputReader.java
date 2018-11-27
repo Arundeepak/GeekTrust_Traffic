@@ -4,22 +4,22 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import com.geektrust.zomato.Traffic.orbit.dto.Orbit1DTO;
-import com.geektrust.zomato.Traffic.orbit.dto.Orbit2DTO;
+import com.geektrust.zomato.Traffic.orbit.dto.OrbitOneDTO;
+import com.geektrust.zomato.Traffic.orbit.dto.OrbitTwoDTO;
 
 public class TrafficInputReader {
 
-	public static void main(String[] arg) throws IOException {
+	public static void main(String[] arg) throws IOException, CloneNotSupportedException {
 
 		TrafficInputReader inputReader = new TrafficInputReader();
 		inputReader.readInputs();
 
 	}
 
-	public void readInputs() throws IOException {
+	public void readInputs() throws IOException, CloneNotSupportedException {
 
-		Orbit1DTO orbit1SpeedLimit = new Orbit1DTO();
-		Orbit2DTO orbit2SpeedLimit = new Orbit2DTO();
+		OrbitOneDTO orbit1SpeedLimit = new OrbitOneDTO();
+		OrbitTwoDTO orbit2SpeedLimit = new OrbitTwoDTO();
 
 		BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("Enter Weather Condition");

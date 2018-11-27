@@ -1,9 +1,9 @@
 package com.geektrust.zomato.Traffic.orbit.dto;
 
-public class Orbit1DTO {
+public class OrbitOneDTO {
 
 	private int orbitsSpeed;
-	private static final int numberOfCarters = 20;
+	public static final int numberOfCarters = 20;
 
 	public int getOrbitsSpeed() {
 		return orbitsSpeed;
