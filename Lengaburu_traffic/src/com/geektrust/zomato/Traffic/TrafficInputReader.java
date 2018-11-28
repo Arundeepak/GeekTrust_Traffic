@@ -12,11 +12,11 @@ public class TrafficInputReader {
 	public static void main(String[] arg) throws IOException, CloneNotSupportedException {
 
 		TrafficInputReader inputReader = new TrafficInputReader();
-		inputReader.readInputs();
+		inputReader.getInputs();
 
 	}
 
-	public void readInputs() throws IOException, CloneNotSupportedException {
+	public void getInputs() throws IOException, CloneNotSupportedException {
 
 		OrbitOneDTO orbit1SpeedLimit = new OrbitOneDTO();
 		OrbitTwoDTO orbit2SpeedLimit = new OrbitTwoDTO();
