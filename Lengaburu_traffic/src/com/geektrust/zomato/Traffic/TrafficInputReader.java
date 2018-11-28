@@ -25,24 +25,27 @@ public class TrafficInputReader {
 		System.out.println("Enter Weather Condition");
 		String weatherCondition = inputReader.readLine();
 
-		if (!weatherCondition.equalsIgnoreCase(WeatherConditions.SUNNY.toString())
+		while(!weatherCondition.equalsIgnoreCase(WeatherConditions.SUNNY.toString())
 				&& !weatherCondition.equalsIgnoreCase(WeatherConditions.RAINY.toString())
 				&& !weatherCondition.equalsIgnoreCase(WeatherConditions.WINDY.toString())) {
 			System.out.println("Enter Proper waether condition");
+			weatherCondition = inputReader.readLine();
 		}
-
+		
 		System.out.println("Enter Orbit 1 Speed Limit");
 		String orbit1SpeedLimitBefore = inputReader.readLine();
 		System.out.println("Enter Orbit 2 Speed Limit");
 		String orbit2SpeedLimitBefore = inputReader.readLine();
 
-		if (Integer.valueOf(orbit1SpeedLimitBefore) instanceof Integer
-				&& Integer.valueOf(orbit2SpeedLimitBefore) instanceof Integer) {
-			orbit1SpeedLimit.setOrbitsSpeed(Integer.valueOf(orbit1SpeedLimitBefore));
-			orbit2SpeedLimit.setOrbitsSpeed(Integer.valueOf(orbit2SpeedLimitBefore));
-		} else {
+		while(!Integer.valueOf(orbit1SpeedLimitBefore) instanceof Integer
+				&& !Integer.valueOf(orbit2SpeedLimitBefore) instanceof Integer) {
 			System.out.println("Enter Orbit Speed in numbers");
-		}
+			orbit1SpeedLimitBefore = inputReader.readLine();
+			System.out.println("Enter Orbit 2 Speed Limit");
+			orbit2SpeedLimitBefore = inputReader.readLine();	
+		} 
+		orbit1SpeedLimit.setOrbitsSpeed(Integer.valueOf(orbit1SpeedLimitBefore));
+		orbit2SpeedLimit.setOrbitsSpeed(Integer.valueOf(orbit2SpeedLimitBefore));
 
 		LengaburuTrafficAnalysis.VehicleAnalysis(weatherCondition);
 
