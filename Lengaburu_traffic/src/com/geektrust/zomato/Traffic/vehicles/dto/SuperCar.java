@@ -2,6 +2,7 @@ package com.geektrust.zomato.Traffic.vehicles.dto;
 
 public class SuperCar {
 
+	public static final String NAME = "SUPERCAR";
 	public static final int superCarSpeed = 20;
 	public static final int superCarCarterTime = 3;
 

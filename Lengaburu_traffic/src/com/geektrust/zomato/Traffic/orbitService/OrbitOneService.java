@@ -24,11 +24,4 @@ public class OrbitOneService implements Paths, Cloneable, Serializable {
 		}
 	}
 
-	public int getOrbitSpeed() {
-		// TODO Auto-generated method stub
-		return new OrbitOneDTO().getOrbitsSpeed();
-	}
-	
-	
-
 }

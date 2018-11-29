@@ -2,6 +2,7 @@ package com.geektrust.zomato.Traffic.vehicles.dto;
 
 public class TukTuk {
 
+	public static final String NAME = "TUKTUK";
 	public static final int tukTukSpeed = 12;
 	public static final int tukTukCarterTime = 1;
 

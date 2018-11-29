@@ -9,9 +9,10 @@ package com.geektrust.zomato.Traffic.vehiclesservice;
  */
 public interface Vehicles {
 
-	default CalcuateSpeedForOrbits getCalcuateSpeedForOrbit(int vehicleSpeed, int vehicleCarterTime) {
+	default CalcuateSpeedForOrbits getCalcuateSpeedForOrbit(String vehicleType, int vehicleSpeed,
+			int vehicleCarterTime) {
 
-		return new CalcuateSpeedForOrbits(vehicleSpeed, vehicleCarterTime);
+		return new CalcuateSpeedForOrbits(vehicleType, vehicleSpeed, vehicleCarterTime);
 	}
 
 }

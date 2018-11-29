@@ -16,8 +16,8 @@ public class LengaburuTrafficAnalysis {
 
 	public static void VehicleAnalysis(String weatherCondition) throws CloneNotSupportedException {
 
-		int orbitOneMaxSpeed = OrbitOneService.getInstanceOfOrbit().getOrbitSpeed();
-		int orbitTwoMaxSpeed = OrbitTwoService.getInstanceOfOrbit().getOrbitSpeed();
+		int orbitOneMaxSpeed = OrbitOneDTO.getOrbitsSpeed();
+		int orbitTwoMaxSpeed = OrbitTwoDTO.getOrbitsSpeed();
 
 		int OrbitOneCartes = OrbitOneDTO.numberOfCarters;
 		int OrbitTwoCartes = OrbitTwoDTO.numberOfCarters;
@@ -33,38 +33,47 @@ public class LengaburuTrafficAnalysis {
 			// bike,tuktuk,car
 			System.out.println("Sunny waether");
 			Vehicles bikeVehicle = new BikeAnalysis();
-			bikeVehicle.getCalcuateSpeedForOrbit(Bike.bikeSpeed, Bike.bikeCarterTime).orbitSpeedTime(orbitOneMaxSpeed,
-					orbitTwoMaxSpeed, orbitOneCartes, orbitTwoCartes);
+			bikeVehicle.getCalcuateSpeedForOrbit(Bike.NAME, Bike.bikeSpeed, Bike.bikeCarterTime).orbitSpeedTime(
+					orbitOneMaxSpeed, orbitTwoMaxSpeed, orbitOneCartes, orbitTwoCartes, Bike.NAME, Bike.bikeSpeed,
+					Bike.bikeCarterTime);
 
 			Vehicles tukTukVehicle = new TukTukAnalysis();
-			tukTukVehicle.getCalcuateSpeedForOrbit(TukTuk.tukTukSpeed, TukTuk.tukTukCarterTime)
-					.orbitSpeedTime(orbitOneMaxSpeed, orbitTwoMaxSpeed, orbitOneCartes, orbitTwoCartes);
+			tukTukVehicle.getCalcuateSpeedForOrbit(TukTuk.NAME, TukTuk.tukTukSpeed, TukTuk.tukTukCarterTime)
+					.orbitSpeedTime(orbitOneMaxSpeed, orbitTwoMaxSpeed, orbitOneCartes, orbitTwoCartes, TukTuk.NAME,
+							TukTuk.tukTukSpeed, TukTuk.tukTukCarterTime);
 
 			Vehicles carsVehicle = new CarAnalysis();
-			carsVehicle.getCalcuateSpeedForOrbit(SuperCar.superCarSpeed, SuperCar.superCarCarterTime)
-					.orbitSpeedTime(orbitOneMaxSpeed, orbitTwoMaxSpeed, orbitOneCartes, orbitTwoCartes);
+			carsVehicle.getCalcuateSpeedForOrbit(SuperCar.NAME, SuperCar.superCarSpeed, SuperCar.superCarCarterTime)
+					.orbitSpeedTime(orbitOneMaxSpeed, orbitTwoMaxSpeed, orbitOneCartes, orbitTwoCartes, SuperCar.NAME,
+							SuperCar.superCarSpeed, SuperCar.superCarCarterTime);
 
-		} else if (weatherCondition.equalsIgnoreCase(WeatherConditions.WINDY.toString())) {
-			// car and bike
-			Vehicles bikeVehicle = new BikeAnalysis();
-			bikeVehicle.getCalcuateSpeedForOrbit(Bike.bikeSpeed, Bike.bikeCarterTime).orbitSpeedTime(orbitOneMaxSpeed,
-					orbitTwoMaxSpeed, orbitOneCartes, orbitTwoCartes);
-
-			Vehicles carsVehicle = new CarAnalysis();
-			carsVehicle.getCalcuateSpeedForOrbit(SuperCar.superCarSpeed, SuperCar.superCarCarterTime)
-					.orbitSpeedTime(orbitOneMaxSpeed, orbitTwoMaxSpeed, orbitOneCartes, orbitTwoCartes);
-
-		} else if (weatherCondition.equalsIgnoreCase(WeatherConditions.RAINY.toString())) {
-			// car and tuktuk
-			Vehicles tukTukVehicle = new TukTukAnalysis();
-			tukTukVehicle.getCalcuateSpeedForOrbit(TukTuk.tukTukSpeed, TukTuk.tukTukCarterTime)
-					.orbitSpeedTime(orbitOneMaxSpeed, orbitTwoMaxSpeed, orbitOneCartes, orbitTwoCartes);
-
-			Vehicles carsVehicle = new CarAnalysis();
-			carsVehicle.getCalcuateSpeedForOrbit(SuperCar.superCarSpeed, SuperCar.superCarCarterTime)
-					.orbitSpeedTime(orbitOneMaxSpeed, orbitTwoMaxSpeed, orbitOneCartes, orbitTwoCartes);
-
-		} else {
+		} /*
+			 * else if
+			 * (weatherCondition.equalsIgnoreCase(WeatherConditions.WINDY.toString())) { //
+			 * car and bike Vehicles bikeVehicle = new BikeAnalysis();
+			 * bikeVehicle.getCalcuateSpeedForOrbit(Bike.NAME, Bike.bikeSpeed,
+			 * Bike.bikeCarterTime) .orbitSpeedTime(orbitOneMaxSpeed, orbitTwoMaxSpeed,
+			 * orbitOneCartes, orbitTwoCartes);
+			 * 
+			 * Vehicles carsVehicle = new CarAnalysis();
+			 * carsVehicle.getCalcuateSpeedForOrbit(SuperCar.NAME, SuperCar.superCarSpeed,
+			 * SuperCar.superCarCarterTime) .orbitSpeedTime(orbitOneMaxSpeed,
+			 * orbitTwoMaxSpeed, orbitOneCartes, orbitTwoCartes);
+			 * 
+			 * } else if
+			 * (weatherCondition.equalsIgnoreCase(WeatherConditions.RAINY.toString())) { //
+			 * car and tuktuk Vehicles tukTukVehicle = new TukTukAnalysis();
+			 * tukTukVehicle.getCalcuateSpeedForOrbit(TukTuk.NAME, TukTuk.tukTukSpeed,
+			 * TukTuk.tukTukCarterTime) .orbitSpeedTime(orbitOneMaxSpeed, orbitTwoMaxSpeed,
+			 * orbitOneCartes, orbitTwoCartes);
+			 * 
+			 * Vehicles carsVehicle = new CarAnalysis();
+			 * carsVehicle.getCalcuateSpeedForOrbit(SuperCar.NAME, SuperCar.superCarSpeed,
+			 * SuperCar.superCarCarterTime) .orbitSpeedTime(orbitOneMaxSpeed,
+			 * orbitTwoMaxSpeed, orbitOneCartes, orbitTwoCartes);
+			 * 
+			 * }
+			 */else {
 			System.out.println();
 		}
 		return null;

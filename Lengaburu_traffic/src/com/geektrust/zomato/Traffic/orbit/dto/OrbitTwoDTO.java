@@ -2,15 +2,18 @@ package com.geektrust.zomato.Traffic.orbit.dto;
 
 public class OrbitTwoDTO {
 
-	private int orbitsSpeed;
-	public static final int numberOfCarters = 10;
-
-	public int getOrbitsSpeed() {
+	public static int orbitsSpeed;
+	public static int getOrbitsSpeed() {
 		return orbitsSpeed;
 	}
-
-	public void setOrbitsSpeed(int orbitsSpeed) {
-		this.orbitsSpeed = orbitsSpeed;
+	public static void setOrbitsSpeed(int orbitsSpeed) {
+		OrbitTwoDTO.orbitsSpeed = orbitsSpeed;
 	}
+	public static int getNumberofcarters() {
+		return numberOfCarters;
+	}
+	public static final int numberOfCarters = 10;
+
+	
 
 }
