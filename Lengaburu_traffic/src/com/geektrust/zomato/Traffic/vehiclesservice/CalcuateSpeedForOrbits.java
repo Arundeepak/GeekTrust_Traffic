@@ -53,14 +53,14 @@ public class CalcuateSpeedForOrbits extends OrbitSpeedAndTimeAnalysis {
 		resultList = new LinkedList<Integer>();
 		if (Weather.getWeatherCondition().equalsIgnoreCase(WeatherConditions.SUNNY.toString())) {
 
-			totalOrbitTwoVehicleTime = ((orbitTwoMaxSpeed) / vehicleSpeed) * 60
-					+ ((orbitTwoCartes) - ((orbitTwoCartes) * 10 / 100) * vehicleCarterTime);
+			totalOrbitTwoVehicleTime = (orbitTwoMaxSpeed / vehicleSpeed) * 60
+					+ ((orbitTwoCartes) - ((orbitTwoCartes * 10) / 100)) * vehicleCarterTime;
 
 		} else if (Weather.getWeatherCondition().equalsIgnoreCase(WeatherConditions.WINDY.toString())) {
 			totalOrbitTwoVehicleTime = ((orbitTwoMaxSpeed) / vehicleSpeed) * 60 + orbitTwoMaxSpeed * vehicleCarterTime;
 		} else {
 			totalOrbitTwoVehicleTime = ((orbitTwoMaxSpeed) / vehicleSpeed) * 60
-					+ (orbitTwoCartes + ((orbitTwoCartes) * 20 / 100)) * (vehicleCarterTime);
+					+ (orbitTwoCartes + ((orbitTwoCartes * 20) / 100)) * (vehicleCarterTime);
 		}
 		resultList.add(2);
 		resultList.add(totalOrbitTwoVehicleTime);
